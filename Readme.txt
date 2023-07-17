@@ -1,0 +1,1 @@
+Mario card using animation

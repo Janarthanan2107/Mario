@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap');
+
+:root {
+    /* colors are changeable always more combinations are in "https://coolors.co/" */
+    --sky: #add8e6;
+    --grass: #008000;
+    --road: #4d4c4c;
+    --lane: #ffffff;
+    /* animation and some effects */
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+
+    /* font-fam*/
+    --body-font-family: 'Raleway', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+body {
+    font-family: var(--body-font-family);
+    text-decoration: var(--text-dec);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sky,
+.grass,
+.roads,
+.lines {
+    position: relative;
+}
+
+/* cloud */
+.cloud-container {
+    background-color: var(--sky);
+}
+
+.cloud1 {
+    width: 200px;
+    height: 200px;
+    animation: drive 80s linear infinite;
+}
+
+.cloud2 {
+    width: 200px;
+    height: 200px;
+    animation: drive 50s linear infinite;
+}
+
+/* grass */
+.grass {
+    height: 200px;
+    background-color: green;
+    box-shadow: 0 -10px 5px green;
+}
+
+/* road */
+.road {
+    height: 250px;
+    background-color: rgb(77, 76, 76);
+    width: 100%;
+}
+
+.racers {
+    position: relative;
+}
+
+.racer {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -25px;
+}
+
+.lane {
+    border-top: 25px dashed white;
+    position: absolute;
+    bottom: 70px;
+    width: 100%;
+}
+
+.red {
+    animation: drive 4s ease-in infinite forwards, jump 0.5s 2s;
+}
+
+.green {
+    animation: drive 5s ease-in-out infinite forwards;
+}
+
+@keyframes drive {
+    from {
+        transform: translateX(-100px);
+    }
+
+    to {
+        transform: translateX(1600px);
+    }
+}
+
+@keyframes jump {
+    0% {
+        top: -35%;
+    }
+
+    40% {
+        top: -65%;
+    }
+
+    100% {
+        top: -35%;
+    }
+}
